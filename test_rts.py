@@ -27,7 +27,7 @@ class TestRts(unittest.TestCase):
         # На новой странице кликаем вкладку "настроить"
         element_settings = WebDriverWait(browser, 10).until(
                 EC.visibility_of_element_located((By.CSS_SELECTOR, 'span.filter__open-modal'))).click()
-        time.sleep(3)
+        time.sleep(2)
         
         # В разделе "быстрые настройки" выбираем "исключить совместные закупки"
         element_checkbox_add = browser.find_element(By.CSS_SELECTOR, '.modal-settings-section:nth-child(1) .grid-column-4-1:nth-child(3)>input')
