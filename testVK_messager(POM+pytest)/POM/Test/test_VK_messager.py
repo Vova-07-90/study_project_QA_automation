@@ -18,11 +18,11 @@ def test_vk_messager(browser):
 
     login = LoginPage(browser)
     login.checkbox_off()
-    login.insert_id('89787672507')
-    login.insert_password('ledzeppelin23')
+    login.insert_id('8978***22**')
+    login.insert_password('l*********3')
 
     search = SearchFriendPage(browser)
-    search.search_friend('Vova Ovchinnikov')
+    search.search_friend('Friend Name')
 
     write = WriteMessagePage(browser)
     write.write_message('hello')
