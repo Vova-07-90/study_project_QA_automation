@@ -8,28 +8,28 @@ class SettingPage():
 
     def __init__(self, browser):
         self.browser = browser
-
-        # выбираем "исключить совместные закупки"
+        
         self.checkbox_on = '.modal-settings-section:nth-child(1) .grid-column-4-1:nth-child(3)>input'
-        # выбираем "615-ПП ФР"
+        
         self.checkbox_on2 = 'div.modal-settings-section:nth-child(2)>div:nth-child(3)>div>div>div:nth-child(3)>input'
-        # деактивируем чекбокс "Активные"
+        
         self.checkbox_off = 'div.modal-settings-section:nth-child(3)>div:nth-child(3)>div>div>input'
-        # активируем "Определение победителя"
+        
         self.checkbox_on3 = 'div.modal-settings-section:nth-child(3)>div:nth-child(3)>div>div:nth-child(2)>div'
-        # открыть регион поставки
+        
         self.open_region = 'div.modal-settings-section:nth-child(7)>div'
-        # выбрать поле и вставить Алтайский край
+        
         self.to_go_region = 'div.modal-settings-section:nth-child(7)>.plate-tabs'
         self.to_add_region = 'input[placeholder="Регион поставки"]'
         self.select_region = 'a.cstm-search__suggest'
-        # Настраиваем фильтр по датам
+        
         self.date_filter = 'div.modal-settings-section:nth-child(12)>div'
         self.btn_by = '.form-group>.form-group__cell:nth-child(3)'
         self.day_today = '.react-datepicker__day--today'
-        # Нажимаем поиск
+        
         self.btn_search = '.search__btn.bottomFilterSearch'
 
+        
     def click_checkbox_on(self):
         element_checkbox_on = self.browser.find_element(By.CSS_SELECTOR, self.checkbox_on)
         ActionChains(self.browser).move_to_element(element_checkbox_on).click(element_checkbox_on).perform()
