@@ -18,7 +18,6 @@ class SearchOfPurchases():
         my_file = open("min_price_test_rts_2.txt", "w")
         flag = True
         while flag == True:
-            # задержка против капчи
             time.sleep(2)
             try:
                 bth_click = self.browser.find_element(By.CSS_SELECTOR, self.btn_load_more)
@@ -27,12 +26,12 @@ class SearchOfPurchases():
                 # кнопка больше не активна
                 flag = False
 
-        zakupki = WebDriverWait(self.browser, 10).until(
+        purchases = WebDriverWait(self.browser, 10).until(
             EC.visibility_of_all_elements_located((By.CSS_SELECTOR, self.min_price)))
-        for i in range(len(zakupki)):
-            zakupka_price = zakupki[i].get_attribute(attribute)
-            list_price.append(zakupka_price)
-            my_file.write(zakupka_price + '\n')
+        for i in range(len(purchases)):
+            purchas_price = purchases[i].get_attribute(attribute)
+            list_price.append(purchas_price)
+            my_file.write(purchas_price + '\n')
         my_file.close()
 
         # Записываем результат в переменную и передаем в логи
